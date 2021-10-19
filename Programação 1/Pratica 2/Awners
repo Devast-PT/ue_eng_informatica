@@ -1,0 +1,37 @@
+1. Analise as seguintes instruções e indique se existem erros.
+(a) x = "hoje" + 2;
+Sim, juntar String com Numero
+
+(b) x = "ola;
+Sim falta o segundo "
+
+(c) 2 - 17;
+Não
+
+(d) printf(v);
+sim falta o format tag
+
+(e) 2 + 7 = a;
+sim.
+(f) a = b + 1;
+Nao, no caso de b ja ter sido declarado como numero inteiro ou real.
+
+
+2. Indique o resultado das seguintes expressões.
+(a) 10-2*(2+2)
+= 10-2*4 = 10 - 8 = 2
+
+(b) 1/3+2/3
+= 0 + 0 = 0
+
+(c) 2+40/10-1
+= 2 + 4 - 1 = 5
+
+(d) 100*100-2*4
+10000 - 8 = 9992
+
+(e) 3*(2*2+1)
+3*(5) = 15
+
+(f) 2+3/(2+1)-7
+= 2+3/3-7 = 2+1-7= -4
