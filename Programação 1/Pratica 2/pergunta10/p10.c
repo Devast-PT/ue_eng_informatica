@@ -1,5 +1,3 @@
-/*Insira um numero: 145.234566
-Numero com 3 casas decimais: 145.234 */
 
 #include <stdio.h>
 
@@ -19,5 +17,5 @@ int main(){
     
     printf("%.3f\n", userInput);
     
-    return 0;
+    return 0; //test
 }
