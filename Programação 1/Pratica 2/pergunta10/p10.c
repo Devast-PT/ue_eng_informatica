@@ -17,5 +17,5 @@ int main(){
     
     printf("%.3f\n", userInput);
     
-    return 0; //test
+    return 0;
 }
