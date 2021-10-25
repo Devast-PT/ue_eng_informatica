@@ -29,7 +29,10 @@ int main(int argc, char *argv[]){
     
         } else if (strlen( argv[1] ) == 2) {
             userInput = argv[1][0];
+            
+            printf("%c", argv[1][0]);
         }
+            
         
         switch(userInput){
             case 50:
