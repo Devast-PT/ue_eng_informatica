@@ -252,16 +252,66 @@ int pergunta9(void){
 }
 
 int pergunta10(void){
+    float coord_x, coord_y;
+    printf("Indique as coordenadas x e y: ");
+    scanf("%f %f", &coord_x, &coord_y);
+    
+    if (coord_x > 0 && coord_y > 0) {
+        printf("O ponto encontra-se no quadrante 1.\n");
+        sleep(1.5);
+    } else if (coord_x < 0 && coord_y > 0) {
+        printf("O ponto encontra-se no quadrante 2.\n");
+        sleep(1.5);
+    } else if (coord_x < 0 && coord_y < 0) {
+        printf("O ponto encontra-se no quadrante 3.\n");
+        sleep(1.5);
+    } else if (coord_x > 0 && coord_y > 0) {
+        printf("O ponto encontra-se no quadrante 4.\n");
+        sleep(1.5);
+    } else if (coord_x == 0 && coord_y == 0) {
+        printf("Coordenada na origem (0 , 0).\n");
+        sleep(1.5);
+    } else if (coord_x == 0) {
+        printf("Coordenada no eixo dos Y.\n");
+        sleep(1.5);
+    } else {
+        printf("Coordenada no eixo dos X.\n");
+        sleep(1.5);        
+    }
     
     return 0;
 }
 
 int pergunta11(void){
+    float ponto1_x, ponto1_y, ponto2_x, ponto2_y;
+    
+    printf("Indique as coordenada x e y do ponto 1: ");
+    scanf("%f %f", &ponto1_x, &ponto1_y);
+    printf("Indique as coordenada x e y do ponto 2: ");
+    scanf("%f %f", &ponto2_x, &ponto2_y);
+    
+    ponto2_x -= ponto1_x;
+    ponto2_y -= ponto1_y;
+    printf("A distancia entre os dois pontos: %f\n", (float) sqrt( (((float)pow(ponto2_x, 2)) + ((float)pow(ponto2_y, 2)) )));
+    
+    sleep(1.5);
+    
     
     return 0;
 }
 
 int pergunta12(void){
+    int ano;
     
+    printf("Introduza o ano: ");
+    scanf("%i", &ano);
+    
+    if ( ( ( ano % 4 ) == 0) &&  ( ( ( ano % 100 ) != 0 ) || ( ( ano % 400 ) == 0 )) ){
+        printf("O ano é bisexto\n");
+        sleep(1.5);        
+    }else {
+    printf("O ano nao é bisexto\n");
+    sleep(1.5);
+    }
     return 0;
 }
