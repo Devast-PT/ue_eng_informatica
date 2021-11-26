@@ -14,48 +14,48 @@ void trianguloPascal(int n);
 
 int main(int argc, char* argv[]){
     int input;
-    
-    scanf("%i", &input);
-    printf("fact %i\n", factorial(input));
-    
-    
-    scanf("%i", &input);
-    printf("fib %i\n", fibonacci(input));
-    
-    scanf("%i", &input);
-    printf("som %i\n", soma(input));
-
-    {
-
-    scanf("%i", &input);
     int i;
-    scanf("%i", &i);
-    printf("mult %i\n", multiplo(input, i));
+    int choice;
+    printf("Escolha a pergunta: ");
+    scanf("%i", &choice);
 
+    if(choice == 1){
+        printf("Escolha um numero para o factorial: ");
+        scanf("%i", &input);
+        printf("fact %i\n", factorial(input));
+    }else if (choice == 2){
+        printf("Escolha o numero do fibonacci: ");
+        scanf("%i", &input);
+        printf("fib %i\n", fibonacci(input));
+    } else if (choice == 3){
+        printf("Escolha o numero para o somatorio: ");
+        scanf("%i", &input);
+        printf("som %i\n", soma(input));
+    } else if (choice == 4){
+        printf("Escolha o numero para fazer o multiplo: ");
+        scanf("%i", &input);
+        scanf("%i", &i);
+        printf("mult %i\n", multiplo(input, i));
+    }else if (choice == 5){
+        printf("Escolha os dois numero para achar o minimo multiplo comun: ");
+        scanf("%i", &input);
+        scanf("%i", &i);
+        printf("mdc %i\n", mdc(input, i));
+    } else if (choice == 6){
+        printf("Escolha os dois numeros para o Ack");
+        scanf("%i", &input);
+        scanf("%i", &i);
+        printf("Ack %i\n", A(input, i));
+    } else if (choice == 7){
+        printf("Posiçao de pascal: ");
+        scanf("%i", &input);
+        scanf("%i", &i);
+        printf("Pasc %i\n", pascal(input, i));
+    } else if (choice == 8) {
+        scanf("%i", &input);
+        printf("PascTriang \n");
+        trianguloPascal(input);
     }
-
-    scanf("%i", &input);
-    int i;
-    scanf("%i", &i);
-    printf("mdc %i\n", mdc(input, i));
-
-
-
-    scanf("%i", &input);
-    scanf("%i", &i);
-    printf("Ack %i\n", A(input, i));
-
-
-    scanf("%i", &input);
-
-    scanf("%i", &i);
-    printf("Pasc %i\n", pascal(input, i));
-
-    scanf("%i", &input);
-    printf("PascTriang \n");
-    trianguloPascal(input);
-
-
     return 0;
 }
 
@@ -131,19 +131,21 @@ int A(int m, int n){
 
 int pascal(int l, int c){
 
-    if (c == 0 || l == c){
+    if (c == 1 || l == c){
         return 1;
     } else {
-        return pascal(l-1, c-1) + pascal(l-1,c);
+        return pascal((l-1), (c-1)) + pascal((l - 1), c);
     }
 }
 
 void trianguloPascal(int n){
 
-    for(int l = 1; l < n; l++){
-        for ( int c = 1; c < n; c++ ){
-            printf("%i ", pascal(l, c));
+    for(int l = 0; l < n; l++){
+        for ( int c = 0; c < n; c++ ){
+            int returning;
+            returning = pascal(l+1, c+1);
+            printf("%i\t", returning);
         }               
         printf("\n");
     }
-    }
+}
