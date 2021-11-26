@@ -10,7 +10,7 @@ int multiplo(int n, int i);
 int mdc(int m, int n);
 int A(int m, int n);
 int pascal(int l, int c);
-int trianguloPascal(int n, int* linha, int* coluna);
+void trianguloPascal(int n, int* linha, int* coluna);
 
 int main(int argc, char* argv[]){
     int input;
@@ -142,17 +142,15 @@ int pascal(int l, int c){
 void trianguloPascal(int n){
 
     for(int linha = 1; linha <= n; linha++){
-        for ( int coluna = 1; coluna <= linha; coluna++ ){
-            int returning;
-            returning = pascal(linha, coluna);
-            printf("%i ", returning);
+        for (int coluna = 1; coluna <= linha; coluna++){
+            printf("%i ", pascal(linha, coluna));
         }               
         printf("\n");
     }
 }
 */
 
-int trianguloPascal(int n, int* linha, int* coluna){
+void trianguloPascal(int n, int* linha, int* coluna){
     if (*linha == n && *coluna == *linha){
         printf("%i\n", pascal(*linha, *coluna));
     } else if (*linha == *coluna){
