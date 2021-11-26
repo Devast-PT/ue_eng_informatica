@@ -10,7 +10,7 @@ int multiplo(int n, int i);
 int mdc(int m, int n);
 int A(int m, int n);
 int pascal(int l, int c);
-void trianguloPascal(int n);
+int trianguloPascal(int n, int* linha, int* coluna);
 
 int main(int argc, char* argv[]){
     int input;
@@ -53,8 +53,9 @@ int main(int argc, char* argv[]){
         printf("Pasc %i\n", pascal(input, i));
     } else if (choice == 8) {
         scanf("%i", &input);
-        printf("PascTriang \n");
-        trianguloPascal(input);
+        printf("Triangulação das Bermudas: \n");
+        int linha = 1, coluna = 1;
+        trianguloPascal(input, &linha, &coluna);
     }
     return 0;
 }
@@ -137,15 +138,32 @@ int pascal(int l, int c){
         return pascal((l-1), (c-1)) + pascal((l - 1), c);
     }
 }
-
+/*
 void trianguloPascal(int n){
 
-    for(int l = 0; l < n; l++){
-        for ( int c = 0; c < n; c++ ){
+    for(int linha = 1; linha <= n; linha++){
+        for ( int coluna = 1; coluna <= linha; coluna++ ){
             int returning;
-            returning = pascal(l+1, c+1);
-            printf("%i\t", returning);
+            returning = pascal(linha, coluna);
+            printf("%i ", returning);
         }               
         printf("\n");
     }
+}
+*/
+
+int trianguloPascal(int n, int* linha, int* coluna){
+    if (*linha == n && *coluna == *linha){
+        printf("%i\n", pascal(*linha, *coluna));
+    } else if (*linha == *coluna){
+        printf("%i \n", pascal(*linha, *coluna));
+        *linha = *linha + 1;
+        *coluna = 1;
+        trianguloPascal(n, linha, coluna);
+    } else if (*linha > *coluna){
+        printf("%i ", pascal(*linha, *coluna));
+        *coluna = *coluna + 1;
+        trianguloPascal(n, linha, coluna);
+    }
+    
 }
