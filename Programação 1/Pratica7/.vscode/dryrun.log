@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/devast/GitHub/ue_eng_informatica/Programação 1/Pratica7'
+gcc -c p7.c -o p7.o
+gcc -o p7 p7.o
+make: Leaving directory '/home/devast/GitHub/ue_eng_informatica/Programação 1/Pratica7'
+ 
